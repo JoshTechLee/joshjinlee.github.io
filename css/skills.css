@@ -6,6 +6,10 @@
 
 }
 
+.skills-container{
+	display: none;
+}
+
 .skills-title-container{
 	height: 100vh;
 	width: 100%;
@@ -48,7 +52,7 @@
 	100% {
 		height: 0px;
 		width: 100%;
-		border-bottom: 0px solid black;
+		border-bottom: 1px solid black;
 	}
 }
 
