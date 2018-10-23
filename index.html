@@ -81,145 +81,101 @@
 				</section>
 			</div>
 		</div>
-
 		<div class="skills-container section">
-			<div class="skills-title-container">
-				<ul class='skills-title-list'>
-					<li class='skills-title-item'>
+			<div class="skills-intro-container">
+				<ul class='skills-intro-list'>
+					<li class='skills-intro-item'>
 						<h1>What</h1>
 					</li>
-					<li class='skills-title-item'>
+					<li class='skills-intro-item'>
 						<h1>Am</h1>
 					</li>
-					<li class='skills-title-item'>
+					<li class='skills-intro-item'>
 						<h1>I</h1>
 					</li>
-					<li class='skills-title-item'>
+					<li class='skills-intro-item'>
 						<h1>Good</h1>
 					</li>
-					<li class='skills-title-item'>
+					<li class='skills-intro-item'>
 						<h1>At</h1>
 					</li>
-					<li class='skills-title-item'>
+					<li class='skills-intro-item'>
 						<h1>?</h1>
 					</li>
 				</ul>
 			</div>
 			<div class="skills-content">
-				<section class='home-section'>
+				<section class='row-container top'>
+					<div class='row-content website'>
+						<div class="tech">
+							<img src='imgs/desktop-laptop.png' alt='desktop-laptop'/>
+						</div>
+						<div class="descriptions">
+							<h2>Websites</h2>
+							<p>I've had a fair share of web development <b>(but never enough!)</b>.<br>So far, I've had my hands on:<br></p>
+							<ul>
+								<li>HTML</li>
+								<li>CSS</li>
+								<li>JavaScript</li>
+								<li>React + Redux</li>
+							</ul>
+						</div>
+					</div>
+					<div class='row-content mobile'>
+						<div class="tech">
+							<img id="iphone" src='imgs/iphone.png' alt='iphone'/>
+							<img id="android" src='imgs/android.png' alt='android'/>
+						</div>
+						<div class="descriptions">
+							<h2>Android + iOS</h2>
+							<p>Out of all forms of front-end development, so far, I've enjoyed working in mobile.</p>
+							<ul>
+								<li>Flutter + Redux (amazing framework btw!)</li>
+								<li>Android</li>
+								<li>iOS</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section class='row-container bot'>
+					<div class='row-content back-end'>
+						<div class="tech">
+							<img src='imgs/back-end.png' alt='back-end'/>
+						</div>
+						<div class="descriptions">
+							<h2>Server and Database</h2>
+							<p>For mobile development, I've learned:</p>
+							<ul>
+								<li>Flutter (amazing framework btw)</li>
+								<li>Node Express</li>
+								<li>Socket.io</li>
+								<li>Firebase</li>
+								<li>SQL</li>
+							</ul>
+						</div>
+					</div>
+					<div class='row-content languages'>
+						<div class="tech">
+							<h1>Skills</h1>
+						</div>
+						<div class="descriptions">
+							<div><p>I always strive to becoming a strong and reliable <b>UI/UX designer</b> + <b>front-end developer</b>.</p>
+								<p>To sum things up, these are the OOP and scripting <strong>languages</strong> that I've become most accustomed to:
+								<ul>
+									<li>Python</li>
+									<li>Java</li>
+									<li>Dart</li>
+									<li>Javascript</li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</section>
 			</div>
 		</div>
 	</div>
-	<script>
-
-		var home = {
-				link: "#home",
-				container: ".home-container",
-				back: {
-					link: "#contact",
-					container: ".contact-container",},
-				forw: {
-					link: "#skills",
-					container: ".skills-container"}}
-
-		var skills = {
-				link: "#skills",
-				container: ".skills-container",
-				back: {
-					link: "#home",
-					container: ".home-container",},
-				forw: {
-					link: "#work",
-					container: ".work-container"}}
-
-		var work ={
-				link: "#work",
-				container: ".work-container",
-				back: {
-					link: "#skills",
-					container: ".skills-container",},
-				forw: {
-					link: "#project",
-					container: ".project-container"}}
-
-		var project = {
-				link: "#project",
-				container: ".project-container",
-				back: {
-					link: "#work",
-					container: ".work-container",},
-				forw: {
-					link: "#contact",
-					container: ".contact-container"}}
-
-		var contact ={
-				link: "#contact",
-				container: ".contact-container",
-				back: {
-					link: "#project",
-					container: ".project-container",},
-				forw: {
-					link: "#home",
-					container: ".home-container"}}	
-
-		var fadeTimer = 200
-
-		var routeChange = function(direction, sectionObj){
-			if(direction == "forward"){
-				$('.section').fadeOut(fadeTimer);
-				setTimeout(function(){
-					$('.section').hide()
-					console.log(sectionObj.forw);
-					$(sectionObj.forw.container).show()
-					window.location.assign(sectionObj.forw.link)
-				}, fadeTimer);
-			} else {
-				setTimeout(function(){
-					$('.section').hide()
-					console.log(sectionObj.back);
-					$(sectionObj.back.container).show()
-					window.location.assign(sectionObj.back.link)
-				}, fadeTimer);
-			}
-		}	
-
-		window.onload =function(){
-			var location = window.location.hash.substr(1)
-			$('.section').hide();
-			if (location != ""){$('.' + location + '-container').show();}
-			else{$('.home-container').show();}
-		};
-
-
-		document.addEventListener('keydown', function(event){
-			var location = window.location.hash.substr(1)
-
-			if (event.keyCode == 65 || event.keyCode == 68){
-				var direction;
-				if (event.keyCode == 65){
-					console.log("a")
-					direction = "backward"
-				} else if (event.keyCode == 68){
-					console.log("d");
-					direction = "forward"
-				}
-
-				if (location == "" || location == "home"){
-					routeChange(direction, home)
-				} else if (location == "skills"){
-					routeChange(direction, skills)
-				} else if (location == "work"){
-					routeChange(direction, work)
-				} else if (location == "project"){
-					routeChange(direction, project)
-				} else if (location == "contact"){
-					routeChange(direction, contact)
-				}
-
-			}
-		});
-</script>
+	<script src="js/main.js">
+	</script>
 
 </body>
 
