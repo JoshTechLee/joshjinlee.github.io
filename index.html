@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Joshua Lee</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/main.css">  
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/home.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+	<header>
+		<div class="header-container">
+			<div class="brand-container"><div class="brand">Joshua Lee</div></div>
+			<nav>
+				<ul class="nav-list">
+					<li class="nav-item"><a href='#'>Contact</a></li>
+					<li class="nav-item"><a href='#'>Project</a></li>
+					<li class="nav-item"><a href='#'>Work</a></li>
+					<li class="nav-item"><a href='#'>About</a></li>
+					<li class="nav-item"><a href='#'>Home</a></li>
+				</ul>            
+			</nav>
+		</div>
+	</header>
+
+	<div class="content-container">
+		<div class="home-container section">
+			<div class="home-title-container">
+				<div class="home-title">
+					<h1>Hi</h1>
+				</div>
+				<div class="arrow-keys">
+					<div class="top-keys">
+						<div class="arrow-key" id='up-arrow'>
+							<div>w</div>
+						</div>
+					</div>
+					<div class="bottom-keys">
+						<div class="arrow-key direct" id="left-arrow">
+							<div>a</div>
+						</div>
+						<div class="arrow-key" id="down-arrow" >
+							<div>s</div>
+						</div>
+						<div class="arrow-key direct" id="right-arrow">
+							<div>d</div>
+						</div>
+					</div>
+					<div id="arrow-key-message">
+						<br>Use <strong>(a)</strong> and <strong>(d)</strong> keys <br> to navigate <br><br>(cause gamer logic)
+					</div>
+				</div>
+			</div>
+			<div class="home-content">
+				<section class='home-section'>
+					<div id="me">
+						<p>My name is <strong>Joshua Lee</strong> and I am </br>a <strong>Software Developer!</strong></p>
+					</div>
+					<div class="hobbies">
+						<p>In my spare time, I like to do...</p>
+						<div class="hobby" id="weight-lifting">
+							<img src="imgs/weight-lifting.png" alt="weight lifting">
+							<p>weight lifting</p>
+						</div>
+						<div class="hobby" id="video-game">
+							<img src="imgs/video-game.png" alt="video game controller"> <p>gaming</p>
+						</div>
+						<div class="hobby" id="computer">
+							<img src="imgs/computer.png" alt="computer"> 
+							<p>and of course <strong>coding!</strong></p>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+	<script>
+		document.addEventListener('keydown', function(event){
+			var fadeTimer = 200
+			if (event.keyCode == 65){
+				console.log("a");
+			} else if (event.keyCode == 68){
+				console.log("d");
+				$('.section').fadeOut(fadeTimer);
+				setTimeout(function(){
+					$('.section').css('display','none')
+				}, fadeTimer)
+			}
+	});
+</script>
+
+</body>
+
+</html>
