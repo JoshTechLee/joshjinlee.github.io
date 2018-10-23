@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/main.css">  
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/home.css">
+	<link rel="stylesheet" href="css/skills.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
@@ -20,17 +21,17 @@
 			<div class="brand-container"><div class="brand">Joshua Lee</div></div>
 			<nav>
 				<ul class="nav-list">
-					<li class="nav-item"><a href='#'>Contact</a></li>
-					<li class="nav-item"><a href='#'>Project</a></li>
-					<li class="nav-item"><a href='#'>Work</a></li>
-					<li class="nav-item"><a href='#'>About</a></li>
-					<li class="nav-item"><a href='#'>Home</a></li>
+					<li class="nav-item"><a href='#contact'>Contact</a></li>
+					<li class="nav-item"><a href='#project'>Project</a></li>
+					<li class="nav-item"><a href='#work'>Work</a></li>
+					<li class="nav-item"><a href='#skills'>Skills</a></li>
+					<li class="nav-item"><a href='#home'>Home</a></li>
 				</ul>            
 			</nav>
 		</div>
 	</header>
 
-	<div class="content-container">
+<!-- 	<div class="content-container">
 		<div class="home-container section">
 			<div class="home-title-container">
 				<div class="home-title">
@@ -60,10 +61,10 @@
 			</div>
 			<div class="home-content">
 				<section class='home-section'>
-					<div id="me">
+					<div>
 						<p>My name is <strong>Joshua Lee</strong> and I am </br>a <strong>Software Developer!</strong></p>
 					</div>
-					<div class="hobbies">
+					<div>
 						<p>In my spare time, I like to do...</p>
 						<div class="hobby" id="weight-lifting">
 							<img src="imgs/weight-lifting.png" alt="weight lifting">
@@ -79,20 +80,76 @@
 					</div>
 				</section>
 			</div>
+		</div> -->
+
+		<div class="skills-container section">
+			<div class="skills-title-container">
+				<ul class='skills-title-list'>
+					<li class='skills-title-item'>
+						<h1>What</h1>
+					</li>
+					<li class='skills-title-item'>
+						<h1>Am</h1>
+					</li>
+					<li class='skills-title-item'>
+						<h1>I</h1>
+					</li>
+					<li class='skills-title-item'>
+						<h1>Good</h1>
+					</li>
+					<li class='skills-title-item'>
+						<h1>At</h1>
+					</li>
+					<li class='skills-title-item'>
+						<h1>?</h1>
+					</li>
+				</ul>
+			</div>
+			<div class="skills-content">
+				<section class='home-section'>
+				</section>
+			</div>
 		</div>
 	</div>
 	<script>
+		var direct = {
+			home:
+				{forw: "skills",
+				back: "contact"},
+			skills:
+				{forw: "home",
+				back: "Work"},			
+			work:
+				{forw: "skills",
+				back: "project"},
+			project:
+				{forw: "work",
+				back: "contact"},
+			contact:
+				{forw: "project",
+				back: "home"},				
+		}
+
 		document.addEventListener('keydown', function(event){
 			var fadeTimer = 200
+			var location = window.location.hash.substr(1)
+
 			if (event.keyCode == 65){
 				console.log("a");
 			} else if (event.keyCode == 68){
 				console.log("d");
-				$('.section').fadeOut(fadeTimer);
-				setTimeout(function(){
-					$('.section').css('display','none')
-				}, fadeTimer)
+
+				if (location == "" || location == "home"){
+					$('.section').fadeOut(fadeTimer);
+					
+					setTimeout(function(){
+						$('.section').hide()
+						console.log(direct.home.forw)
+					}, fadeTimer);
+
+				}
 			}
+    
 	});
 </script>
 

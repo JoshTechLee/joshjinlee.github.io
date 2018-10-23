@@ -2,7 +2,7 @@
 html body{
 	margin: 0;
 	font-family: Helvetica;
-	overflow: hidden;
+	overflow-y: hidden;
 	height: 500vh;
 	background: var(--body-background);
 }
@@ -24,7 +24,7 @@ html body{
 
 /**** HEADER + NAVIGATION (END) ****/
 .content-container{
-	overflow: hidden;
+	overflow-y: hidden;
 }
 
 

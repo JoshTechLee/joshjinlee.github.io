@@ -3,11 +3,6 @@
 	--body-background: #FFFFAA;
 
 }
-
-.content-container{
-	overflow: hidden;
-}
-
 .home-title-container{
 	position: fixed;
 	/*overflow: hidden;*/
