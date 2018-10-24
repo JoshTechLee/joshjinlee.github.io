@@ -1,4 +1,6 @@
 
+var testing = true;
+
 var home = {
 		link: "#home",
 		container: ".home-container",
@@ -72,10 +74,12 @@ var routeChange = function(direction, sectionObj){
 }	
 
 window.onload =function(){
-	var location = window.location.hash.substr(1)
-	$('.section').hide();
-	if (location != ""){$('.' + location + '-container').show();}
-	else{$('.home-container').show();}
+	if (testing == false){
+		var location = window.location.hash.substr(1)
+		$('.section').hide();
+		if (location != ""){$('.' + location + '-container').show();}
+		else{$('.home-container').show();}
+	}
 };
 
 
