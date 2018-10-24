@@ -1,5 +1,5 @@
 
-var testing = true;
+var testing = false;
 
 var home = {
 		link: "#home",
