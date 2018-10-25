@@ -12,6 +12,7 @@
 }
 
 .skills-intro-container{
+	position: absolute;
 	height: 100vh;
 	width: 100%;
 	display: flex;
@@ -20,6 +21,7 @@
 }
 
 .skills-intro-list{
+	position: absolute;
 	padding: 0px;
 	height: 100px;
 	width: var(--skills-intro-width);;
@@ -53,10 +55,15 @@
 		width: 100%;
 		border-bottom: 1px solid rgba(0,0,0,0);
 	}
-	100% {
+	99% {
 		height: 0px;
 		width: 100%;
-		border-bottom: 1px solid rgba(0,0,0,0);
+		border-bottom: 0px solid rgba(0,0,0,0);
+	}
+	100% {
+		height: 0px;
+		width: 0px;
+		border-bottom: 0px solid rgba(0,0,0,0);
 	}
 
 }
@@ -112,16 +119,18 @@
 	bottom: 0px;
 }
 
-.skills-content > .row-container{
+.skills-content .row-container{
 	position: fixed;
-	height: 50%;
-	width: 100%;
+	height: 50vh;
+	width: 100vw;
 
 }
 
 .row-content{
 	position: relative;
-	height: 0%;
+	margin-bottom: 0px !important;
+	padding-bottom: 0px !important;
+	height: 0vh;
 	width: 50%;
 	overflow-y: hidden;
 	display:flex;
@@ -135,8 +144,8 @@
 }
 
 @keyframes row-content-animation{
-	0%{height: 0%;}
-	100%{height: 100%;}
+	0%{height: 0vh;}
+	100%{height: 50vh;}
 }
 
 .descriptions{
@@ -145,6 +154,13 @@
 	z-index: 3;
 	margin-left: 20px;
 	right: 20px;
+}
+
+.tech{
+	position: absolute;
+	height: 50vh !important;
+	bottom: 0px;
+	margin-bottom: 0px !important
 }
 
 .row-content .descriptions{
@@ -191,14 +207,14 @@
 	margin-top: 25px;
 /*	transform: translateX(-100px);
 	left: -100px;*/
-	height: 120%;
+	height: 60vh;
 }
 
 #android{
 	position: absolute;
 	margin-top: 30px;
 	/*left: 50px;*/
-	height: 135%;
+	height: 67.5vh;
 }
 
 .back-end{
@@ -216,7 +232,7 @@
 }
 
 .back-end .tech img{
-	height: 80%;
+	height: 40vh;
 }
 
 .languages{
@@ -238,7 +254,7 @@
 .languages > .descriptions-container{
 	padding: 10px;
 	width: 100%;
-	height: 100%;
+	height: 50vh !important;
 	display: flex;
 	justify-content: center;
 	align-items: center;

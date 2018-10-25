@@ -24,11 +24,44 @@
 	background: var(--projects-theme-background);
 }
 
+.projects-show-select >div{
+	position: absolute;
+	left: 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.projects-three-way-display {
+	width: 100%;
+	height: 95%;
+	border: 5px solid red;
+	padding: 10px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.projects-three-way-display img{
+	box-shadow: -3px 3px 3px 3px rgba(0,0,0,0.5);
+	width: 100%;
+}
+
+
 .projects-show-select h1:first-child{
+	position: absolute;
+	width: 100%;
 	font-size: 5em;
 	opacity: 0.2;
 	text-align: center;
 }
+
+
 
 .projects-content-container{
 	position: fixed;
@@ -86,6 +119,37 @@
 	height: 100%;
 }
 
+.projects-content > .tools{
+	list-style: none;
+	padding-left: 0px;
+}
+
+.projects-content > .tools > li{
+	display: inline-block;
+	margin-right: 5px;
+	border-radius: 25px;
+	border: 2px solid red;
+	padding: 3px;
+	background: rgba(255,255,255, 0.5);
+}
+
+.github-icon{
+	display: inline;
+	margin-left: 20px
+	border-radius: 20px;
+}
+
+.github-icon img{
+	height: 20px;
+	border-radius: 20px;
+	box-shadow: 0px 0px 5px 7px rgba(0,0,0,0);
+	transition: box-shadow 0.15s ease-in-out;
+}
+
+.github-icon:hover img{
+	box-shadow: 0px 0px 5px 7px white;
+}
+
 .projects-status{
 	position: absolute;
 	width: 100%;
@@ -96,6 +160,10 @@
 	justify-content: center;
 	align-items: center;
 	font-size: 3em;
+}
+
+.projects-status h3{
+	transform: rotate(10deg);
 }
 
 .projects-arrow-keys{
@@ -116,6 +184,43 @@
 	100%{opacity: 1; transform: translateY(60px) ;}
 }
 
+.projects-intro-title{
+	font-size: 1.5em;
+	/*opacity: 0;*/
+	position: absolute;
+	height: 100%;
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.projects-intro-title h1{
+	transform: translateX(0px);
+
+	animation-name: projects-intro-animation;
+	animation-duration: 1s;
+}
+
+@keyframes projects-intro-animation{
+	0% {opacity: 0;}
+	33% {transform: translateX(0vw); opacity: 1;}
+	66% {transform: translateX(0vw); opacity: 1;}
+	99% {transform: translateX(100vw); opacity: 1;}
+	100% {{transform: translateX(100vw); opacity: 0;}
+
+}
+
+.projects-intro-string{
+	position: absolute;
+	right: 0px;
+	top: calc(50vh - 5px);
+	height: 10px;
+	width: 10px;
+	background: black;
+}
+/*.21,.52,.33,1*/
 
 
 

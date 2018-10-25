@@ -162,19 +162,22 @@
 	height: 80%;
 	width: 100%;
 	transform: var(--work-contain-degree);
-	overflow-y: hidden;
+	cursor: pointer;
+	overflow-y: scroll;
 }
 
 .work-description-container > div{
-	margin-top: 3vw;
+	padding-top: 3vw;
 	transform: var(--work-content-degree);
 	height: 65%;
 	width: 100vw;
 	opacity: 0;
+	overflow-y: scroll;
 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: space-around;
 
 	animation-name: work-description-container-animation;
 	animation-fill-mode: forwards;
@@ -188,17 +191,21 @@
 }
 
 .work-description-title{
+	position: relative;
 	flex-grow: 1;
+	flex: 1 0 auto;
+	margin-top: 10px;
 	width: 150px;
 	display: flex;
 	align-items: center;
 	justify-content: center
 }
 .work-description-content{
-	width: 400px;
+	max-width: 400px;
 }
 
 .work-description {
+	position: relative;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -212,8 +219,6 @@
 .work-description-content li{
 	padding: 5px 0px;
 }
-
-
 
 
 
