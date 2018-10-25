@@ -1,6 +1,7 @@
 
 html body{
 	margin: 0;
+	padding: 0px;
 	font-family: Helvetica;
 	overflow-y: hidden;
 	height: 500vh;
