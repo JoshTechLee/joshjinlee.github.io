@@ -1,5 +1,5 @@
 
-var testing = true;
+var testing = false;
 
 var home = {
 		link: "#home",
@@ -28,12 +28,12 @@ var work ={
 			link: "#skills",
 			container: ".skills-container",},
 		forw: {
-			link: "#project",
-			container: ".project-container"}}
+			link: "#projects",
+			container: ".projects-container"}}
 
-var project = {
-		link: "#project",
-		container: ".project-container",
+var projects = {
+		link: "#projects",
+		container: ".projects-container",
 		back: {
 			link: "#work",
 			container: ".work-container",},
@@ -45,8 +45,8 @@ var contact ={
 		link: "#contact",
 		container: ".contact-container",
 		back: {
-			link: "#project",
-			container: ".project-container",},
+			link: "#projects",
+			container: ".projects-container",},
 		forw: {
 			link: "#home",
 			container: ".home-container"}}	
@@ -102,8 +102,8 @@ document.addEventListener('keydown', function(event){
 			routeChange(direction, skills)
 		} else if (location == "work"){
 			routeChange(direction, work)
-		} else if (location == "project"){
-			routeChange(direction, project)
+		} else if (location == "projects"){
+			routeChange(direction, projects)
 		} else if (location == "contact"){
 			routeChange(direction, contact)
 		}

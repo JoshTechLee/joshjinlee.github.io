@@ -1,14 +1,12 @@
 :root{
 
 	/*--body-background: #FFFFAA;*/
-	--skills-item-delay: 150ms;
-	--skills-item-duration: 5ms;
-	--work-contain-degree: skewY(-5deg);
-	--work-content-degree: skewY(5deg);
+	
 
 }
 
 .projects-container{
+	display: none;
 	height: 100%;
 	width: 100%;a
 }
@@ -16,10 +14,11 @@
 
 .projects-show-select{
 	position: fixed;
-	top: 0px;
-	right: 0px;
 	width: calc(50% - 10px);
 	height: 100%;
+	top: 0px;
+	right: 0px;
+
 	background: rgb(255, 153, 153);
 }
 
@@ -73,6 +72,25 @@
 .projects-content-list > li > *{
 	z-index: 10;
 }
+
+.projects-arrow-keys{
+	position: absolute;
+	margin-top: 10px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	animation-name: projects-arrow-keys-animation;
+	animation-fill-mode: forwards;
+	animation-duration: 0.2s;
+}
+
+@keyframes projects-arrow-keys-animation{
+	0% {opacity: 0; transform: translateY(0px);}
+	100%{opacity: 1; transform: translateY(60px) ;}
+}
+
 
 
 

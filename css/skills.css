@@ -182,7 +182,7 @@
 }
 #iphone{
 	position: absolute;
-	padding-top: 20px;
+	margin-top: 25px;
 /*	transform: translateX(-100px);
 	left: -100px;*/
 	height: 120%;
@@ -190,7 +190,7 @@
 
 #android{
 	position: absolute;
-	padding-top: 30px;
+	margin-top: 30px;
 	/*left: 50px;*/
 	height: 135%;
 }

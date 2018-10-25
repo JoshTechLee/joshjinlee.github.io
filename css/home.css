@@ -34,7 +34,7 @@
 	margin: 10px;
 }
 
-.arrow-keys{
+.home-arrow-keys{
 	position: absolute;
 	width: 50%;
 	opacity: 0;
@@ -44,13 +44,13 @@
 	flex-direction: column;
 	align-items: center;
 
-	animation-name: arrow-keys-animation;
+	animation-name: home-arrow-keys-animation;
 	animation-delay: 0.75s;
 	animation-fill-mode: forwards;
 	animation-duration: 0.2s;
 }
 
-@keyframes arrow-keys-animation{
+@keyframes home-arrow-keys-animation{
 	0% {opacity: 0; transform: translateY(0px);}
 	100%{opacity: 1; transform: translateY(60px) ;}
 }
