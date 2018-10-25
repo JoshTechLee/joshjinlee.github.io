@@ -13,7 +13,6 @@
 	/*position: fixed;*/
 	height: 100%;
 	width: 100%;
-	height: 200%;
 	/*overflow-y: visible;*/
 }
 
@@ -93,7 +92,7 @@
 
 	animation-name: work-image-animation;
 	animation-fill-mode: forwards;
-	animation-delay: 1.1s;
+	animation-delay: 1.17s;
 	animation-duration: 0.3s;
 }
 
@@ -128,6 +127,7 @@
 .work-image-container .work-title{
 	font-size: 1em;
 	display: flex;
+	flex-wrap: wrap;
 	/*justify-content: center;*/
 	align-items: baseline; 
 	background: rgba(255,255,255,0.8);

@@ -7,6 +7,10 @@ html body{
 	background: var(--body-background);
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
 
 :root{
 	/**** Navigation Variables ****/
