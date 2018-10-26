@@ -1,7 +1,7 @@
 :root{
 	/**** Navigation Variables ****/
 	--nav-container-width: 100%;
-	--nav-spread-width: 100%;
+	--nav-spread-width: 95%;
 	--nav-item-padding: 10px 0 10px 0;
 	--nav-item-hover-background: rgba(200, 200, 200, 0.5);
 	--nav-background: rgba(200, 200, 200, 0.);
@@ -15,7 +15,6 @@ header{
 	font-size: 1.2em;
 	margin: 0;
 	position: fixed;
-	background: var(--nav-background);
 	width: var(--nav-container-width);
 	overflow: auto;
 	z-index: 10;
@@ -23,6 +22,7 @@ header{
 
 .header-container{
 	margin: auto;
+	/*background: rgba(0,0,0,0.2);*/
 	width: var(--nav-spread-width);
 	display: table;
 
@@ -79,7 +79,64 @@ nav{
 .nav-item:hover a{
 	color: black;
 }
+.nav-toggle {
+	/*display: none;*/
+	position: relative;
+	float: right;
+	height: 42px;
+	width: 42px;
+}
 
+.nav-toggle > div{
+	position: absolute;
+	border-radius: 10px;
+	margin: 2px;
+	width: 38px;
+	height: 10px;
+	background: black;
+	transform-origin: center;
+	animation-duration: 0.3s;
+	animation-fill-mode: forwards;
+}
+
+.nav-toggle > div:nth-child(1){
+	top: 0px;
+	animation-name: nav-toggle-top;
+}
+
+@keyframes nav-toggle-top{
+	0%{transform: rotate(0deg); top: 0px;}
+	100%{transform: rotate(45deg); top: 14px;}
+}
+
+.nav-toggle > div:nth-child(2){
+	top: 14px;
+	left: 0px;
+	animation-name: nav-toggle-middle;
+}
+
+@keyframes nav-toggle-middle{
+	0%{opacity: 1;}
+	100%{aopacity: 0;}
+}
+
+
+
+.nav-toggle > div:nth-child(3){
+	top: 28px;
+	animation-name: nav-toggle-bot;
+}
+
+@keyframes nav-toggle-bot{
+	0%{transform: rotate(0deg); top: 28px;}
+	100%{transform: rotate(-45deg); top: 14px;}
+}
+
+
+
+@media only screen and (max-width: 650px){
+	
+}
 
 
 

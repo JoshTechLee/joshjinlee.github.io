@@ -279,7 +279,7 @@
 		bottom: auto;
 
 		animation-name: m-skills-anim;
-		animation-delay: calc(var(--skills-item-delay) * 8);
+		animation-delay: calc(var(--skills-item-delay) * 7);
 		animation-fill-mode: forwards;
 		animation-duration: 0.5s;
 	}

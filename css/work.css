@@ -179,13 +179,13 @@
 	width: 100%;
 	transform: var(--work-contain-degree);
 	cursor: pointer;
-	overflow-y: scroll;
+	overflow: scroll;
 }
 
 .work-description-container > div{
 	padding-top: 3vw;
 	transform: var(--work-content-degree);
-	height: 65%;
+	height: 74%;
 	width: 100vw;
 	opacity: 0;
 	overflow-y: scroll;
@@ -211,6 +211,7 @@
 	flex: 1 0 auto;
 	margin-top: 10px;
 	width: 150px;
+	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center
@@ -240,7 +241,7 @@
 
 @media only screen and (max-width: 650px){
 	.work-description-title{
-		display: none;
+		/*display: none;*/
 	}
 
 	.work-description{
