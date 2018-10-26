@@ -148,7 +148,6 @@
 	background: #FFFF00;
 	overflow: hidden;
 	z-index: 2;
-	/*padding: 30px;*/
 
 	animation-delay: 0.6s;
 	animation-name: home-content-animation;
@@ -159,8 +158,6 @@
 #m-home-title{
 	display: none;
 }
-
-/*@keyframes infor*/
 
 @keyframes home-content-animation{
 	0% {opacity: 0;}
