@@ -1,12 +1,3 @@
-:root{
-
-	/*--body-background: #FFFFAA;*/
-	--skills-item-delay: 150ms;
-	--skills-item-duration: 5ms;
-	--work-contain-degree: skewY(-5deg);
-	--work-content-degree: skewY(5deg);
-
-}
 
 .work-container{
 	display: none;
@@ -115,7 +106,7 @@
 }
 
 .work-image-container img[src*="ibm-crew"]{
-	animation-delay: 2.2s;
+	animation-delay: 2.1s;
 	bottom: -10%;
 	left: 0px;
 	height: 75%;

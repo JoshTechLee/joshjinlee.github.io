@@ -1,4 +1,29 @@
 
+:root{
+	/**** Navigation Variables ****/
+	--nav-container-width: 100%;
+	--nav-spread-width: 100%;
+	--nav-item-padding: 10px 0 10px 0;
+	--nav-item-hover-background: rgba(200, 200, 200, 0.5);
+	--nav-background: rgba(200, 200, 200, 0.);
+
+	/**** Others ****/
+	--body-background: #FFFFAA;
+
+	/**** Skills ****/
+	--skills-item-delay: 150ms;
+	--skills-item-duration: 5ms;
+	--work-contain-degree: skewY(-5deg);
+	--work-content-degree: skewY(5deg);
+
+	/**** Work ****/
+
+	/**** Projects ****/
+	--projects-theme-background: rgba(255, 179, 179, 1);
+	--projects-content-delay: 0.5s;
+}
+
+
 html body{
 	margin: 0;
 	padding: 0px;
@@ -12,20 +37,6 @@ html body{
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
-
-:root{
-	/**** Navigation Variables ****/
-	--nav-container-width: 100%;
-	--nav-spread-width: 100%;
-	--nav-item-padding: 10px 0 10px 0;
-	--nav-item-hover-background: rgba(200, 200, 200, 0.5);
-	--nav-background: rgba(200, 200, 200, 0.);
-
-	/**** Others ****/
-	--body-background: #FFFFAA;
-
-}
-
 
 /**** HEADER + NAVIGATION (END) ****/
 .content-container{
