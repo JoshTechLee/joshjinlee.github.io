@@ -13,10 +13,10 @@
 	/**** Skills ****/
 	--skills-item-delay: 150ms;
 	--skills-item-duration: 5ms;
-	--work-contain-degree: skewY(-5deg);
-	--work-content-degree: skewY(5deg);
 
 	/**** Work ****/
+	--work-contain-degree: skewY(-5deg);
+	--work-content-degree: skewY(5deg);
 
 	/**** Projects ****/
 	--projects-theme-background: rgba(255, 179, 179, 1);

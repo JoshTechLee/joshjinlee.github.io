@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="css/skills.css">
 	<link rel="stylesheet" href="css/work.css">
 	<link rel="stylesheet" href="css/projects.css">
+	<link rel='stylesheet' href='css/contact.css'/>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
@@ -38,9 +39,9 @@
 
 	<div class="content-container">
 		<div class="home-container section">
-			<div class="home-title-container">
+			<section class="home-title-container">
 				<div class="home-title">
-					<h1>Hi</h1>
+					<h1>hello</h1>
 				</div>
 				<div class="home-arrow-keys">
 					<div class="top-keys">
@@ -63,29 +64,34 @@
 						<br>Use <strong>(a)</strong> and <strong>(d)</strong> keys <br> to navigate <br><br>(cause gamer logic)
 					</div>
 				</div>
-			</div>
-			<div class="home-content">
-				<section class='home-section'>
+			</section>
+			<section class="home-content">
+				<div class='home-section'>
 					<div>
-						<p>My name is <strong>Joshua Lee</strong> and I am </br>a <strong>Software Developer!</strong></p>
+						<div class="m-home-anim" id="m-home-title">
+							<h1 class="m-home-anim">a little</h1>
+							<h1 class="m-home-anim"> about</h1>
+							<h1 class="m-home-anim"> me.</h1>
+						</div>
+						<p id="m-home-1" class="m-home-anim">My name is <strong>Joshua Lee</strong> and I am </br>a <strong>Software Developer!</strong></p>
 					</div>
 					<div>
-						<p>In my spare time, I like to do...</p>
-						<div class="hobby" id="weight-lifting">
+						<p id="m-home-2" class="m-home-anim">In my spare time, I like to do...</p>
+						<div class="hobby m-home-anim" id="weight-lifting">
 							<img src="imgs/weight-lifting.png" alt="weight lifting">
 							<p>weight lifting</p>
 						</div>
-						<div class="hobby" id="video-game">
+						<div class="hobby m-home-anim" id="video-game">
 							<img src="imgs/video-game.png" alt="video game controller">
 							<p>gaming</p>
 						</div>
-						<div class="hobby" id="computer">
+						<div class="hobby m-home-anim" id="computer">
 							<img src="imgs/computer.png" alt="computer">
 							<p>and of course <strong>coding!</strong></p>
 						</div>
 					</div>
-				</section>
-			</div>
+				</div>
+			</section>
 		</div>
 
 		<div class="skills-container section">
@@ -102,8 +108,8 @@
 					</li>
 				</ul>
 			</div>
-			<div class="skills-content">
-				<section class='row-container top'>
+			<div class="skills-content-container">
+				<div class="skills-content">
 					<section class='row-content website'>
 						<div class="tech">
 							<img src='imgs/desktop-laptop.png' alt='desktop-laptop' />
@@ -134,8 +140,6 @@
 							</ul>
 						</div>
 					</section>
-				</section>
-				<section class='row-container bot'>
 					<section class='row-content back-end'>
 						<div class="tech">
 							<img src='imgs/back-end.png' alt='back-end' />
@@ -172,12 +176,15 @@
 							</div>
 						</div>
 					</section>
-				</section>
+				</div>
 			</div>
 		</div>
 
 		<div class="work-container section">
 			<div id="work-intro-cover"></div>
+			<div id="work-title">
+				<h1>Work</h1>
+			</div>
 			<section class="work-image-container">
 				<h1>Work Experience</h1>
 				<img src='imgs/ibm-team.jpg' alt='ibm-team' />
@@ -200,8 +207,6 @@
 							<p>I was tasked on working with technical documents and creating instructional manuals for new developers. I
 								organized meetings every quarter to discuss documentation cuts and schedule translation shipments.</p>
 						</div>
-					</div>
-					<div class="work-description">
 						<div class="work-description-title">
 							<h2>Working...</h2>
 						</div>
@@ -232,9 +237,9 @@
 			<section class="projects-show-select">
 				<h1>Projects</h1>
 				<div>
-<!-- 					<div class="projects-three-way-display">
+					<div class="projects-three-way-display">
 						<img src='imgs/three-way-handshake.jpg' alt='three-way-handshake'/>
-					</div> -->
+					</div>
 				</div>
 				<div id="projects-show-pointer"></div>
 			</section>
@@ -296,9 +301,19 @@
 							<div class="links"></div>
 						</div>
 					</li>
-
 				</ul>
 			</section>
+		</div>
+		<div class="contact-container section">
+			<div class='contact-title-container'>
+				<div id="g">
+					<svg height="100" width="100">
+  						<circle cx="50" cy="50" r="40" />
+					</svg>
+				</div>
+				
+
+			</div>			
 		</div>
 	</div>
 	<script src="js/main.js">
