@@ -1,16 +1,9 @@
 :root{
-	/**** Navigation Variables ****/
-	--nav-container-width: 100%;
-	--nav-spread-width: 100%;
-	--nav-item-padding: 10px 0 10px 0;
-	--nav-item-hover-background: rgba(200, 200, 200, 0.5);
-	--nav-background: rgba(200, 200, 200, 0.);
-
 	--contact-expand-width: 150px;
 }
 
 .contact-container{
-	/* display: none; */
+	display: none;
 }
 
 .contact-title-container{
@@ -118,6 +111,11 @@ path{
 	height: 100%;
 }
 
+#resume-icon img{
+	margin: auto;
+	height: 70%;
+}
+
 .contact-details{
 	position: relative;
 	color: black;
@@ -183,9 +181,15 @@ path{
 
 @media only screen and (max-width: 650px){
 	.contact-layout-container{
-		flex-direction: column;
+		display: grid;
+		grid-template-columns: 50% 50%;
+		grid-template-columns: 50% 50%;
 	}
 	.contact-wrapper{
-		margin: 5px 0px;
+		margin: 5px 5px;
+	}
+	.contact-details{
+		left: 0px;
+		width: 150px;
 	}
 }

@@ -1,74 +1,39 @@
 
-var testing = true;
+var testing = false;
+var navWidth = 100;
+var fadeTimer = 200
+var currentPath = home;
 
 var home = {
-	path: "#home",
-	container: ".home-container",
-	back: {
-		path: "#contact",
-		container: ".contact-container",
-	},
-	forw: {
-		path: "#skills",
-		container: ".skills-container"
-	}
+	position: navWidth * 4, path: "#home", container: ".home-container",
+	back: { path: "#contact", container: ".contact-container", },
+	forw: { path: "#skills", container: ".skills-container" }
 }
 
 var skills = {
-	path: "#skills",
-	container: ".skills-container",
-	back: {
-		path: "#home",
-		container: ".home-container",
-	},
-	forw: {
-		path: "#work",
-		container: ".work-container"
-	}
+	position: navWidth * 3, path: "#skills", container: ".skills-container",
+	back: { path: "#home", container: ".home-container", },
+	forw: { path: "#work", container: ".work-container" }
 }
 
 var work = {
-	path: "#work",
-	container: ".work-container",
-	back: {
-		path: "#skills",
-		container: ".skills-container",
-	},
-	forw: {
-		path: "#projects",
-		container: ".projects-container"
-	}
+	position: navWidth * 2, path: "#work", container: ".work-container",
+	back: { path: "#skills", container: ".skills-container", },
+	forw: { path: "#projects", container: ".projects-container" }
 }
 
 var projects = {
-	path: "#projects",
-	container: ".projects-container",
-	back: {
-		path: "#work",
-		container: ".work-container",
-	},
-	forw: {
-		path: "#contact",
-		container: ".contact-container"
-	}
+	position: navWidth * 1, path: "#projects", container: ".projects-container",
+	back: { path: "#work", container: ".work-container", },
+	forw: { path: "#contact", container: ".contact-container" }
 }
 
 var contact = {
-	path: "#contact",
-	container: ".contact-container",
-	back: {
-		path: "#projects",
-		container: ".projects-container",
-	},
-	forw: {
-		path: "#home",
-		container: ".home-container"
-	}
+	position: navWidth * 0, path: "#contact", container: ".contact-container",
+	back: { path: "#projects", container: ".projects-container", },
+	forw: { path: "#home", container: ".home-container" }
 }
 
-var fadeTimer = 200
-
-var currentPath = home;
 
 var routeChange = function (direction, sectionObj) {
 	if (direction == "forward") {
@@ -77,13 +42,23 @@ var routeChange = function (direction, sectionObj) {
 			$('.section').hide()
 			$(sectionObj.forw.container).show()
 			currentPath = assignCurrentPath(sectionObj.forw.path)
+			$('.nav-selector').css('right', '' + currentPath.position + 'px')
 		}, fadeTimer);
-	} else {
+	} else if (direction == "backward"){
 		$('.section').fadeOut(fadeTimer);
 		setTimeout(function () {
 			$('.section').hide()
 			$(sectionObj.back.container).show()
 			currentPath = assignCurrentPath(sectionObj.back.path)
+			$('.nav-selector').css('right', '' + currentPath.position + 'px')
+		}, fadeTimer);
+	} else {
+		$('.section').fadeOut(fadeTimer);
+		setTimeout(function () {
+			$('.section').hide()
+			$(sectionObj.container).show()
+			currentPath = assignCurrentPath(sectionObj.path)
+			$('.nav-selector').css('right', '' + sectionObj.position + 'px')
 		}, fadeTimer);
 	}
 }
@@ -105,6 +80,48 @@ window.onload = function () {
 		$('.home-container').show();
 	}
 };
+
+
+
+$('#nav-home').hover(
+	function () { $('.nav-selector').css('right', '' + home.position + 'px'); },
+	function () { $('.nav-selector').css('right', '' + currentPath.position + 'px') });
+
+$('#nav-skills').hover(
+	function () { $('.nav-selector').css('right', '' + skills.position + 'px'); },
+	function () { $('.nav-selector').css('right', '' + currentPath.position + 'px') });
+
+$('#nav-work').hover(
+	function () { $('.nav-selector').css('right', '' + work.position + 'px'); },
+	function () { $('.nav-selector').css('right', '' + currentPath.position + 'px') });
+
+$('#nav-projects').hover(
+	function () { $('.nav-selector').css('right', '' + projects.position + 'px'); },
+	function () { $('.nav-selector').css('right', '' + currentPath.position + 'px') });
+
+$('#nav-contact').hover(
+	function () { $('.nav-selector').css('right', '' + contact.position + 'px'); },
+	function () { $('.nav-selector').css('right', '' + currentPath.position + 'px') });
+
+$('#nav-home').click(function(){
+	routeChange('click', home);
+});
+
+$('#nav-skills').click(function(){
+	routeChange('click', skills);
+});
+
+$('#nav-work').click(function(){
+	routeChange('click', work);
+});
+
+$('#nav-projects').click(function(){
+	routeChange('click', projects);
+});
+
+$('#nav-contact').click(function(){
+	routeChange('click', contact);
+});
 
 document.addEventListener('keydown', function (event) {
 

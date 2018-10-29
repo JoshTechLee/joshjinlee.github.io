@@ -25,19 +25,20 @@
 			<div class="brand-container">
 				<div class="brand">Joshua Lee</div>
 			</div>
-			<!-- 			<div class="nav-toggle">
+			<div class="nav-toggle">
 				<div></div>
 				<div></div>
 				<div></div>
-			</div> -->
+			</div>
 			<nav>
-				<ul class="nav-list">
-					<li class="nav-item"><a href='#contact'>Contact</a></li>
-					<li class="nav-item"><a href='#projects'>Projects</a></li>
-					<li class="nav-item"><a href='#work'>Work</a></li>
-					<li class="nav-item"><a href='#skills'>Skills</a></li>
-					<li class="nav-item"><a href='#home'>Home</a></li>
-				</ul>
+				<div class="nav-container">
+					<div class="nav-selector"></div>
+					<div id="nav-home" class="nav-item"><a href='#home'>Home</a></div>
+					<div id="nav-skills" class="nav-item"><a href='#skills'>Skills</a></div>
+					<div id="nav-work" class="nav-item"><a href='#work'>Work</a></div>
+					<div id="nav-projects" class="nav-item"><a href='#projects'>Projects</a></div>
+					<div id="nav-contact" class="nav-item"><a href='#contact'>Contact</a></div>
+				</div>
 			</nav>
 		</div>
 	</header>
@@ -116,6 +117,26 @@
 			</div>
 			<div class="skills-content-container">
 				<div class="skills-content">
+					<section class='row-content languages'>
+						<div class="tech">
+							<h1>Skills</h1>
+						</div>
+						<div class="descriptions-container">
+							<div>
+								<div>
+									<p>I always strive to becoming a strong and reliable <b>UI/UX designer</b> + <b>front-end developer</b>.</p>
+									<p>To sum things up, these are the OOP and scripting <strong>languages</strong> that I've become most
+										accustomed to:</p>
+									<ul>
+										<li>Python</li>
+										<li>Java</li>
+										<li>Dart</li>
+										<li>Javascript</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</section>
 					<section class='row-content website'>
 						<div class="tech">
 							<img src='imgs/desktop-laptop.png' alt='desktop-laptop' />
@@ -160,26 +181,6 @@
 								<li>Firebase</li>
 								<li>SQL</li>
 							</ul>
-						</div>
-					</section>
-					<section class='row-content languages'>
-						<div class="tech">
-							<h1>Skills</h1>
-						</div>
-						<div class="descriptions-container">
-							<div>
-								<div>
-									<p>I always strive to becoming a strong and reliable <b>UI/UX designer</b> + <b>front-end developer</b>.</p>
-									<p>To sum things up, these are the OOP and scripting <strong>languages</strong> that I've become most
-										accustomed to:</p>
-									<ul>
-										<li>Python</li>
-										<li>Java</li>
-										<li>Dart</li>
-										<li>Javascript</li>
-									</ul>
-								</div>
-							</div>
 						</div>
 					</section>
 				</div>
@@ -230,9 +231,7 @@
 				</div>
 			</section>
 		</div>
-
 		<div class="projects-container section">
-
 			<div class="projects-intro">
 				<div id="projects-intro-title">
 					<div>
@@ -272,7 +271,7 @@
 					</div>
 				</div>
 				<ul class='projects-content-list'>
-					<li class='projects-content-item'>
+					<li class='projects-content-item' id="client-server-hotspot">
 						<div class="projects-content">
 							<h2>Client-Server-HotSpot <a class="github-icon" href='https://github.com/joshjinlee/Client-Server-Hotspot'
 								 target="_blank"><img src='imgs/github.png' alt='github' /></a></h2>
@@ -286,7 +285,7 @@
 							<div class="links"></div>
 						</div>
 					</li>
-					<li class='projects-content-item'>
+					<li class='projects-content-item' id="quibble">
 						<div class="projects-content">
 							<h2>Quibble <a class="github-icon" href='https://github.com/joshjinlee/Quibble' target="_blank"><img src='imgs/github.png'
 									 alt='github' /></a></h2>
@@ -303,7 +302,7 @@
 							<div class="links"></div>
 						</div>
 					</li>
-					<li class='projects-content-item'>
+					<li class='projects-content-item' id="eumag">
 						<div class="projects-status">
 							<h3>IN PROGRESS</h3>
 						</div>
@@ -321,7 +320,7 @@
 							<div class="links"></div>
 						</div>
 					</li>
-					<li class='projects-content-item'>
+					<li class='projects-content-item' id="bendshop">
 						<div class="projects-status">
 							<h3>UNAVAILABLE</h3>
 						</div>
@@ -346,6 +345,16 @@
 				<div id="name-svg-container">
 					<h1>good bye</h1>
 					<div class="contact-layout-container">
+						<div class="contact-wrapper">
+							<a href="mailto:13jl45@gmail.com?Subject=Hi%20Joshua!" target="_top">
+								<div class="contact-details">
+									<div class="contact-description">
+										<h3>resume</h3>
+									</div>
+									<div class="contact-icon-container" id="resume-icon"><img src="imgs/resume-icon.png" alt="resume"></div>
+								</div>
+							</a>
+						</div>
 						<div class="contact-wrapper">
 							<a href="mailto:13jl45@gmail.com?Subject=Hi%20Joshua!" target="_top">
 								<div class="contact-details">

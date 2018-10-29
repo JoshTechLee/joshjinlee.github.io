@@ -170,7 +170,7 @@
 
 .github-icon{
 	display: inline;
-	margin-left: 20px
+	margin-left: 20px;
 	border-radius: 20px;
 }
 
@@ -267,6 +267,9 @@
 	100% {left: 0px;}
 }
 
+@media only screen and (max-width: 650px){
+
+}
 
 
 

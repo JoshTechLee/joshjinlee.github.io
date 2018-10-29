@@ -14,9 +14,10 @@
 header{
 	font-size: 1.2em;
 	margin: 0;
+	background: rgba(255,255,255, 0.3);
 	position: fixed;
 	width: var(--nav-container-width);
-	overflow: auto;
+	overflow: visible;
 	z-index: 10;
 }
 
@@ -29,59 +30,61 @@ header{
 }
 
 .brand-container{
-	display: table-cell;
-	vertical-align: middle;
-	width: auto;
-	text-align: center;
+	float: left;
+	height: 50px;
+	width: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
+
 
 
 nav{
-	float:right;
-	height: 100%;
+	float: right;
+}
+
+nav .nav-container{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
 
 }
 
-.nav-list{
-	width: 100%;
-	margin: 0 auto;
-	padding: 0;
-}
+.nav-selector{
+	position: absolute;
+	top: 0px;
+	right: 400px;
+	width: 100px;
+	height: 40px;
+	z-index: -1;
 
+	transition: right 0.3s;
+	border-bottom: 5px solid black;
+}
 
 .nav-item{
-	list-style: none;
-	/*display: inline-block;*/
-	text-align: center;
-	transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
-	float: right;
-	cursor: pointer;
+	width: 100px;
+	height: 50px;
+	/* background: rgba(0,0,0,0.5); */
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
+	cursor: pointer;
 }
 
 .nav-item a{
-	padding: var(--nav-item-padding);
-	width: 100px;
-	display: block;
 	text-decoration: none;
-	vertical-align: middle;
-	transition: background 0.5s ease-in-out;
-	color: grey;
-}
-
-.nav-item:hover{
-	color: black !important;
-	background: var(--nav-item-hover-background);
-
-}
-
-
-.nav-item:hover a{
 	color: black;
 }
+
+
 .nav-toggle {
 	/*display: none;*/
 	position: relative;
+	top:10px;
 	float: right;
 	height: 42px;
 	width: 42px;
@@ -91,8 +94,8 @@ nav{
 	position: absolute;
 	border-radius: 10px;
 	margin: 2px;
-	width: 38px;
-	height: 10px;
+	width: 30px;
+	height: 5px;
 	background: black;
 	transform-origin: center;
 	animation-duration: 0.3s;
@@ -104,38 +107,46 @@ nav{
 	animation-name: nav-toggle-top;
 }
 
-@keyframes nav-toggle-top{
+/* @keyframes nav-toggle-top{
 	0%{transform: rotate(0deg); top: 0px;}
 	100%{transform: rotate(45deg); top: 14px;}
-}
+} */
 
 .nav-toggle > div:nth-child(2){
-	top: 14px;
+	top: 10px;
 	left: 0px;
 	animation-name: nav-toggle-middle;
 }
 
-@keyframes nav-toggle-middle{
+/* @keyframes nav-toggle-middle{
 	0%{opacity: 1;}
 	100%{aopacity: 0;}
-}
+} */
 
 
 
 .nav-toggle > div:nth-child(3){
-	top: 28px;
+	top: 20px;
 	animation-name: nav-toggle-bot;
 }
 
-@keyframes nav-toggle-bot{
+/* @keyframes nav-toggle-bot{
 	0%{transform: rotate(0deg); top: 28px;}
 	100%{transform: rotate(-45deg); top: 14px;}
+} */
+
+.nav-toggle{
+	display: none;
 }
 
 
-
 @media only screen and (max-width: 650px){
-	
+	.nav-toggle{
+		display: block;
+	}
+	.nav-container{
+		display: none !important;
+	}
 }
 
 
