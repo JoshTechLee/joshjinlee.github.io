@@ -2,89 +2,97 @@
 var testing = false;
 
 var home = {
-		link: "#home",
+		path: "#home",
 		container: ".home-container",
 		back: {
-			link: "#contact",
+			path: "#contact",
 			container: ".contact-container",},
 		forw: {
-			link: "#skills",
+			path: "#skills",
 			container: ".skills-container"}}
 
 var skills = {
-		link: "#skills",
+		path: "#skills",
 		container: ".skills-container",
 		back: {
-			link: "#home",
+			path: "#home",
 			container: ".home-container",},
 		forw: {
-			link: "#work",
+			path: "#work",
 			container: ".work-container"}}
 
 var work ={
-		link: "#work",
+		path: "#work",
 		container: ".work-container",
 		back: {
-			link: "#skills",
+			path: "#skills",
 			container: ".skills-container",},
 		forw: {
-			link: "#projects",
+			path: "#projects",
 			container: ".projects-container"}}
 
 var projects = {
-		link: "#projects",
+		path: "#projects",
 		container: ".projects-container",
 		back: {
-			link: "#work",
+			path: "#work",
 			container: ".work-container",},
 		forw: {
-			link: "#contact",
+			path: "#contact",
 			container: ".contact-container"}}
 
 var contact ={
-		link: "#contact",
+		path: "#contact",
 		container: ".contact-container",
 		back: {
-			link: "#projects",
+			path: "#projects",
 			container: ".projects-container",},
 		forw: {
-			link: "#home",
+			path: "#home",
 			container: ".home-container"}}	
 
 var fadeTimer = 200
+
+var currentPath = home;
 
 var routeChange = function(direction, sectionObj){
 	if(direction == "forward"){
 		$('.section').fadeOut(fadeTimer);
 		setTimeout(function(){
 			$('.section').hide()
-			console.log(sectionObj.forw);
 			$(sectionObj.forw.container).show()
-			window.location.assign(sectionObj.forw.link)
+			currentPath = assignCurrentPath(sectionObj.forw.path)
 		}, fadeTimer);
 	} else {
 		$('.section').fadeOut(fadeTimer);
 		setTimeout(function(){
 			$('.section').hide()
-			console.log(sectionObj.back);
 			$(sectionObj.back.container).show()
-			window.location.assign(sectionObj.back.link)
+			currentPath = assignCurrentPath(sectionObj.back.path)
 		}, fadeTimer);
 	}
 }	
 
+var assignCurrentPath = function(path){
+	console.log("assignCurrentPath " + path)
+	if (path == "#home") return home
+	if (path == "#skills") return skills
+	if (path == "#work") return work
+	if (path == "#projects") return projects
+	if (path == "#contact") return contact
+
+}
+
 window.onload =function(){
 	if (testing == false){
-		var location = window.location.hash.substr(1)
+		currentPath = home
 		$('.section').hide();
-		if (location != ""){$('.' + location + '-container').show();}
-		else{$('.home-container').show();}
+		$('.home-container').show();
 	}
 };
 
 
 document.addEventListener('keydown', function(event){
-	var location = window.location.hash.substr(1)
 
 	if (event.keyCode == 65 || event.keyCode == 68){
 		var direction;
@@ -95,16 +103,18 @@ document.addEventListener('keydown', function(event){
 			console.log("d");
 			direction = "forward"
 		}
+		
+		console.log(currentPath)
 
-		if (location == "" || location == "home"){
+		if (currentPath == home){
 			routeChange(direction, home)
-		} else if (location == "skills"){
+		} else if (currentPath == skills){
 			routeChange(direction, skills)
-		} else if (location == "work"){
+		} else if (currentPath == work){
 			routeChange(direction, work)
-		} else if (location == "projects"){
+		} else if (currentPath == projects){
 			routeChange(direction, projects)
-		} else if (location == "contact"){
+		} else if (currentPath == contact){
 			routeChange(direction, contact)
 		}
 
