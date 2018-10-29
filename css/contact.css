@@ -1,7 +1,16 @@
+:root{
+	/**** Navigation Variables ****/
+	--nav-container-width: 100%;
+	--nav-spread-width: 100%;
+	--nav-item-padding: 10px 0 10px 0;
+	--nav-item-hover-background: rgba(200, 200, 200, 0.5);
+	--nav-background: rgba(200, 200, 200, 0.);
 
+	--contact-expand-width: 150px;
+}
 
 .contact-container{
-	display: none;
+	/* display: none; */
 }
 
 .contact-title-container{
@@ -77,9 +86,106 @@ path{
 	}
 } 
 
+.contact-icon-container{
+	position:absolute;
+	width: 50px;
+	height: 50px;
+	background: white;
+	border-radius: 50%;
+	color: white;
+	left: 0px;
+
+	transition: transform 0.5s;
+
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+#gmail-icon img{
+	margin: auto;
+	height: 75%
+}
+
+#github-icon img{
+	margin: auto;
+	height: 90%;
+	width: 90%;
+}
+
+#linkedin-icon img{
+	margin: auto;
+	height: 100%;
+}
+
+.contact-details{
+	position: relative;
+	color: black;
+	overflow: hidden;
+	width: 50px;
+	height: 50px;
+	left: 50px;
+	border-radius: 25px;
+	background: rgba(255, 255, 255, 0.8);
+	transition: width 0.5s, left 0.5s;
+}
+
+.contact-wrapper{
+	width: var(--contact-expand-width);
+	height: 50px;
+	margin: 0px 5px;
+	opacity: 0;
+	cursor: pointer;
+
+	animation: contact-wrapper-animation 1s;
+	animation-fill-mode: forwards;
+	animation-delay: 1s;
+}
+
+@keyframes contact-wrapper-animation{
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
+
+.contact-wrapper:hover .contact-details{
+	width: var(--contact-expand-width);
+	left: 0px;
+}
+
+.contact-wrapper:hover .contact-icon-container{
+	transform: rotate(-360deg);
+}
 
 
+.contact-layout-container{
+	position: absolute;
+	bottom: 20px;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
 
+.contact-description{
+	position: absolute;
+	overflow: hidden;
+	height: 50px;
+	width: 100px;
+	border-radius: 25px;
+	right: 0px;
+	text-align: center;
 
+	transition: width 0.5s;
 
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
 
+@media only screen and (max-width: 650px){
+	.contact-layout-container{
+		flex-direction: column;
+	}
+	.contact-wrapper{
+		margin: 5px 0px;
+	}
+}

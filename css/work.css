@@ -188,6 +188,7 @@
 	width: 100vw;
 	opacity: 0;
 	overflow-y: scroll;
+	margin-bottom: 100px;
 
 	display: flex;
 	flex-direction: column;
