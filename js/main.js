@@ -91,6 +91,7 @@ window.onload = function () {
 $('.nav-toggle').click(function(){
 	$('.nav-container').toggleClass('nav-item-active');
 	$('header').toggleClass('header-active');
+	$('.nav-toggle').toggleClass('nav-toggle-active');
 });
 
 
