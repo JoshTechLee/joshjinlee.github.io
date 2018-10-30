@@ -1,8 +1,7 @@
 
-var testing = false;
+var testing = true;
 var navWidth = 100;
 var fadeTimer = 200
-var currentPath = home;
 
 var home = {
 	position: navWidth * 4, path: "#home", container: ".home-container",
@@ -34,6 +33,14 @@ var contact = {
 	forw: { path: "#home", container: ".home-container" }
 }
 
+var currentPath = home;
+
+$(window).bind("orientationchange", function(){
+	var orientation = window.orientation;
+	var new_orientation = (orientation) ? 0 : 180 + orientation;
+	$('body').css({"-webkit-transform": "rotate(" + new_orientation + "deg)"});
+	});
+
 
 var routeChange = function (direction, sectionObj) {
 	if (direction == "forward") {
@@ -52,7 +59,7 @@ var routeChange = function (direction, sectionObj) {
 			currentPath = assignCurrentPath(sectionObj.back.path)
 			$('.nav-selector').css('right', '' + currentPath.position + 'px')
 		}, fadeTimer);
-	} else {
+	} else if (sectionObj.path != currentPath.path){
 		$('.section').fadeOut(fadeTimer);
 		setTimeout(function () {
 			$('.section').hide()
@@ -81,6 +88,10 @@ window.onload = function () {
 	}
 };
 
+$('.nav-toggle').click(function(){
+	$('.nav-container').toggleClass('nav-item-active');
+	$('header').toggleClass('header-active');
+});
 
 
 $('#nav-home').hover(

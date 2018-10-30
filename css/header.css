@@ -5,6 +5,7 @@
 	--nav-item-padding: 10px 0 10px 0;
 	--nav-item-hover-background: rgba(200, 200, 200, 0.5);
 	--nav-background: rgba(200, 200, 200, 0.);
+	--nav-height: 40px;
 
 
 }
@@ -17,21 +18,22 @@ header{
 	background: rgba(255,255,255, 0.3);
 	position: fixed;
 	width: var(--nav-container-width);
+	height: var(--nav-height);
 	overflow: visible;
 	z-index: 10;
 }
 
 .header-container{
 	margin: auto;
-	/*background: rgba(0,0,0,0.2);*/
 	width: var(--nav-spread-width);
+	height: var(--nav-height);
 	display: table;
 
 }
 
 .brand-container{
 	float: left;
-	height: 50px;
+	height: var(--nav-height);
 	width: 100px;
 	display: flex;
 	align-items: center;
@@ -54,20 +56,20 @@ nav .nav-container{
 
 .nav-selector{
 	position: absolute;
-	top: 0px;
 	right: 400px;
 	width: 100px;
-	height: 40px;
+	height: calc(var(--nav-height) - 4px);
+	background: rgba(255,255,255,0.3);
 	z-index: -1;
 
 	transition: right 0.3s;
-	border-bottom: 5px solid black;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
 }
 
 .nav-item{
 	width: 100px;
-	height: 50px;
-	/* background: rgba(0,0,0,0.5); */
+	height: var(--nav-height);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -82,12 +84,13 @@ nav .nav-container{
 
 
 .nav-toggle {
-	/*display: none;*/
+	top: 5px;
 	position: relative;
-	top:10px;
 	float: right;
-	height: 42px;
-	width: 42px;
+	height: calc(var(--nav-height) - 12px);
+	width: var(--nav-height);
+
+	cursor: pointer;
 }
 
 .nav-toggle > div{
@@ -145,8 +148,53 @@ nav .nav-container{
 		display: block;
 	}
 	.nav-container{
-		display: none !important;
+		position: fixed !important;
+		right: 0px;
+		top: 40px;
+		width: 100%;
+		height: 0px;
+		overflow: hidden;
+		background: rgba(255,255,255,0.3);
+
+		transition: height 0.3s;
+		
+		flex-direction: column !important;
+		justify-content: center !important;
+		align-items: center !important;
 	}
+	.nav-item-active{
+		display: flex !important;
+		overflow: hidden;
+		height: 200px;
+	}
+
+	.nav-item-active .nav-item{
+		opacity: 1;
+	}
+
+	.header-active{
+		background: rgba(255,255,255,0.3);
+
+		animation: header-animation 0.3s ease-in-out 1;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes header-animation{
+		0%{background: rgba(255,255,255,0.3);}
+		100%{background: rgba(255,255,255,0.65);}
+	}
+
+	.nav-item{
+		width: 100%;
+		opacity: 0;
+		background: rgba(255,255,255,0.5);
+
+		transition: opacity 0.2s;
+	}
+	.nav-selector{
+		display: none;
+	}
+
 }
 
 
