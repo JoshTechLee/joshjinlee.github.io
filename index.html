@@ -240,38 +240,30 @@
 			</div>
 			<section class="projects-show-select">
 				<h1>Projects</h1>
-				<div>
-					<div class="projects-three-way-display">
-						<img src='imgs/three-way-handshake.jpg' alt='three-way-handshake' />
+					<div class="projects-display-container">
+						<div class="projects-show" id="projects-csh">
+							<img src="imgs/three-way-handshake.svg" alt="three-way-handshake">
+						</div>
+						<div class="projects-show" id="projects-quibble">
+							<img src="imgs/quibble.svg" alt="quibble">
+						</div>
+						<div class="projects-show" id="projects-eumag">
+							<img src="imgs/eumag.svg" alt="eumag">
+						</div>
+						<div class="projects-show" id="projects-bendshop">
+
+						</div>
 					</div>
-				</div>
 				<div id="projects-show-pointer"></div>
 			</section>
 			<section class="projects-content-container">
-				<div class="projects-arrow-keys">
-					<div class="top-keys">
-						<div class="arrow-key direct" id='up-arrow'>
-							<div>w</div>
-						</div>
-					</div>
-					<div class="bottom-keys">
-						<div class="arrow-key" id="left-arrow">
-							<div>a</div>
-						</div>
-						<div class="arrow-key direct" id="down-arrow">
-							<div>s</div>
-						</div>
-						<div class="arrow-key" id="right-arrow">
-							<div>d</div>
-						</div>
-					</div>
-					<div id="arrow-key-message">
-						<br>Use <strong>(w)</strong> and <strong>(s)</strong> keys <br> to choose <strong>project</strong>
-					</div>
+				<div id="arrow-down-pointer">
+					<i id="arrow"></i>
+					<i id="arrow"></i>
 				</div>
 				<ul class='projects-content-list'>
-					<li class='projects-content-item' id="client-server-hotspot">
-						<div class="projects-content">
+					<li class='projects-content-item'>
+						<div class="projects-content" id="client-server-hotspot">
 							<h2>Client-Server-HotSpot <a class="github-icon" href='https://github.com/joshjinlee/Client-Server-Hotspot'
 								 target="_blank"><img src='imgs/github.png' alt='github' /></a></h2>
 							<p>A bare-bones TCP client-server hotspot created as a final project for my Computer Networking class. Each
@@ -284,8 +276,8 @@
 							<div class="links"></div>
 						</div>
 					</li>
-					<li class='projects-content-item' id="quibble">
-						<div class="projects-content">
+					<li class='projects-content-item'>
+						<div class="projects-content" id="quibble">
 							<h2>Quibble <a class="github-icon" href='https://github.com/joshjinlee/Quibble' target="_blank"><img src='imgs/github.png'
 									 alt='github' /></a></h2>
 							<p>For my Software Quality Assurance final project, we were tasked upon creating a ticket kiosk that tracked
@@ -301,8 +293,8 @@
 							<div class="links"></div>
 						</div>
 					</li>
-					<li class='projects-content-item' id="eumag">
-						<div class="projects-status">
+					<li class='projects-content-item'>
+						<div class="projects-status" id="eumag">
 							<h3>IN PROGRESS</h3>
 						</div>
 						<div class="projects-content">
@@ -319,8 +311,8 @@
 							<div class="links"></div>
 						</div>
 					</li>
-					<li class='projects-content-item' id="bendshop">
-						<div class="projects-status">
+					<li class='projects-content-item'>
+						<div class="projects-status" id="bendshop">
 							<h3>UNAVAILABLE</h3>
 						</div>
 						<div class="projects-content">

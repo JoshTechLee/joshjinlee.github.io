@@ -23,6 +23,36 @@
 	--projects-content-delay: 0.5s;
 }
 
+#arrow {
+	position: relative;
+	border: solid black;
+	border-width: 0 10px 10px 0;
+	display: inline-block;
+	transform-origin: center;
+	transform: rotate(45deg);
+	padding: 10px;
+	animation: arrow-pointer-animation 2s ease 0s infinite forwards;
+}
+
+#arrow-down-pointer #arrow:last-child{
+	animation-delay: 0.1s;
+}
+
+@keyframes arrow-pointer-animation{
+	0%{top: 0px; opacity: 0}
+	50%{top: 30px; opacity: 1}
+	100%{top: 60px; opacity: 0}
+	
+}
+
+#arrow-down-pointer{
+	position: absolute;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
 
 html body{
 	margin: 0;
