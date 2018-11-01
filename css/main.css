@@ -31,6 +31,9 @@
 	transform-origin: center;
 	transform: rotate(45deg);
 	padding: 10px;
+}
+
+.scroll-arrow{
 	animation: arrow-pointer-animation 2s ease 0s infinite forwards;
 }
 
@@ -54,6 +57,44 @@
 	justify-content: center;
 }
 
+.nav-arrows{
+	position: absolute;
+	top: calc(50vh - 25px);
+	height: 50px;
+	width: 50px;
+	z-index: 10;
+	opacity: 0.5;
+	cursor: pointer;
+
+	animation: nav-arrow-animation 4s ease-in-out 0s infinite;
+}
+
+#nav-right{
+	right: 0px;
+}
+
+#nav-right #arrow{
+	top: 10px;
+	transform: rotate(-45deg);
+}
+
+#nav-left{
+	left: 0px;
+	transform-origin: center;
+	transform: rotate(90deg);
+}
+
+#nav-left #arrow{
+	left: 10px;
+}
+
+@keyframes nav-arrow-animation{
+	0%{opacity: 0.3}
+	20%{opacity: 0.8}
+	40%{opacity: 0.3}
+	100%{opacity: 0.3}
+}
+
 html body{
 	margin: 0;
 	padding: 0px;
@@ -65,7 +106,7 @@ html body{
 
 ::-webkit-scrollbar {
     width: 0px;
-    background: transparent; /* make scrollbar transparent */
+    background: transparent;
 }
 
 /**** HEADER + NAVIGATION (END) ****/

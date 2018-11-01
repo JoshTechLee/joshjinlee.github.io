@@ -178,35 +178,10 @@ $('#nav-contact').click(function(){
 });
 
 
+$('#nav-right').click(function(){routeChange("forward", currentPath)})
+$('#nav-left').click(function(){routeChange("backward", currentPath)})
+
 document.addEventListener('keydown', function (event) {
-	var margin_top = parseInt($('#client-server-hotspot').css('marginTop'))
-	var csh_top = $('#client-server-hotspot').offset().top + margin_top
-	// var csh_bot = csh_top + $('#client-server-hotspot').outerHeight()
-	// var quibble_top = $('#quibble').offset().top + margin_top
-	// var quibble_bot = quibble_top + $('#quibble').outerHeight()
-	// var eumag_top = $('#eumag').offset().top + margin_top
-	// var eumag_bot = eumag_top + $('#eumag').outerHeight()
-	// var bendshop_top = $('#bendshop').offset().top + margin_top
-	// var bendshop_bot = bendshop_top + $('#bendshop').outerHeight()
-
-	if(currentPath == projects){
-		if (event.keyCode == 87){
-
-			// $('.projects-content-container').animate({
-			// 	scrollTop: $("#client-server-hotspot").offset().top
-			// }, 200)
-			$('.projects-content-container').stop().animate({
-				scrollTop: $("#quibble").offset().top
-			}, 200)
-			// $('.projects-content-container').animate({
-			// 	scrollTop: $("#eumag").offset().top
-			// }, 200)
-			// $('.projects-content-container').animate({
-			// 	scrollTop: $("#bendshop").offset().top
-			// }, 200)
-		}	
-	}
-
 	if (event.keyCode == 65 || event.keyCode == 68) {
 		var direction;
 		if (event.keyCode == 65) {
@@ -229,7 +204,4 @@ document.addEventListener('keydown', function (event) {
 			routeChange(direction, contact)
 		}
 	}
-
-
-
 });
