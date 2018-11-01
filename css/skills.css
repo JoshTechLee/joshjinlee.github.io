@@ -291,7 +291,7 @@
 
 	.row-container{
 		position: relative;
-		height: 500px;
+		height: 600px;
 		width: 100vw;
 		display: flex;
 		flex-direction: column;

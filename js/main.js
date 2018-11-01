@@ -1,5 +1,5 @@
 
-var testing = true;
+var testing = false;
 var navWidth = 100;
 var fadeTimer = 200
 
@@ -78,32 +78,33 @@ var projectsScroll = function(){
 $('.projects-content-container').scroll(projectsScroll);
 
 var routeChange = function (direction, sectionObj) {
+	
 	if (direction == "forward") {
+		currentPath = assignCurrentPath(sectionObj.forw.path)
 		$('.section').fadeOut(fadeTimer);
 		setTimeout(function () {
 			$('.section').hide()
 			$(sectionObj.forw.container).show()
-			currentPath = assignCurrentPath(sectionObj.forw.path)
 			$('.nav-selector').css('right', '' + currentPath.position + 'px')
 		}, fadeTimer);
 	} else if (direction == "backward"){
+		currentPath = assignCurrentPath(sectionObj.back.path)
 		$('.section').fadeOut(fadeTimer);
 		setTimeout(function () {
 			$('.section').hide()
 			$(sectionObj.back.container).show()
-			currentPath = assignCurrentPath(sectionObj.back.path)
 			$('.nav-selector').css('right', '' + currentPath.position + 'px')
 		}, fadeTimer);
 	} else if (sectionObj.path != currentPath.path){
+		currentPath = assignCurrentPath(sectionObj.path)
 		$('.section').fadeOut(fadeTimer);
 		setTimeout(function () {
 			$('.section').hide()
 			$(sectionObj.container).show()
-			currentPath = assignCurrentPath(sectionObj.path)
 			$('.nav-selector').css('right', '' + sectionObj.position + 'px')
 		}, fadeTimer);
 	}
-	if (sectionObj.path == projects.path){
+	if (currentPath.path == projects.path){
 		console.log("currentPath")
 		$('.projects-show').hide()
 		setTimeout(projectsScroll, fadeTimer*7);

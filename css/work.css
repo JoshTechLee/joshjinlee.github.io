@@ -177,7 +177,6 @@
 	height: 80%;
 	width: 100%;
 	transform: var(--work-contain-degree);
-	cursor: pointer;
 	overflow: scroll;
 }
 
