@@ -37,26 +37,6 @@
 	animation: arrow-pointer-animation 2s ease 0s infinite forwards;
 }
 
-#arrow-down-pointer #arrow:last-child{
-	animation-delay: 0.1s;
-}
-
-@keyframes arrow-pointer-animation{
-	0%{top: 0px; opacity: 0}
-	50%{top: 30px; opacity: 1}
-	100%{top: 60px; opacity: 0}
-	
-}
-
-#arrow-down-pointer{
-	position: absolute;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
 .nav-arrows{
 	position: absolute;
 	top: calc(50vh - 25px);

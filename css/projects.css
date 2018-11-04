@@ -200,26 +200,6 @@
 	transform: rotate(10deg);
 }
 
-.projects-arrow-keys{
-	position: absolute;
-	margin-top: 10px;
-	width: 100%;
-	opacity: 0;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-	animation-name: projects-arrow-keys-animation;
-	animation-fill-mode: forwards;
-	animation-delay: calc(var(--projects-content-delay) + 0.7s);
-	animation-duration: 0.2s;
-}
-
-@keyframes projects-arrow-keys-animation{
-	0% {opacity: 0; transform: translateY(0px);}
-	100%{opacity: 1; transform: translateY(60px) ;}
-}
-
 
 .projects-intro{
 	position: absolute;
@@ -248,7 +228,26 @@
 	100%{width: calc(50vw + 95px);}
 }
 
+#arrow-down-pointer #arrow:last-child{
+	animation-delay: 0.1s;
+}
 
+@keyframes arrow-pointer-animation{
+	0%{top: 0px; opacity: 0}
+	50%{top: 30px; opacity: 1}
+	100%{top: 60px; opacity: 0}
+	
+}
+
+#arrow-down-pointer{
+	position: absolute;
+	height: 30vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
 
 #projects-intro-title > div{
 	position: absolute;

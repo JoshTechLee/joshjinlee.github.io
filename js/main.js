@@ -133,11 +133,15 @@ window.onload = function () {
 	}
 };
 
-
-$('.nav-toggle').click(function(){
+var navToggles = function(){
 	$('.nav-container').toggleClass('nav-item-active');
 	$('header').toggleClass('header-active');
 	$('.nav-toggle').toggleClass('nav-toggle-active');
+}
+
+
+$('.nav-toggle').click(function(){
+	navToggles();
 });
 
 
@@ -163,18 +167,23 @@ $('#nav-contact').hover(
 
 $('#nav-home').click(function(){
 	routeChange('click', home);
+	navToggles();
 });
 $('#nav-skills').click(function(){
 	routeChange('click', skills);
+	navToggles();
 });
 $('#nav-work').click(function(){
 	routeChange('click', work);
+	navToggles();
 });
 $('#nav-projects').click(function(){
 	routeChange('click', projects);
+	navToggles();
 });
 $('#nav-contact').click(function(){
 	routeChange('click', contact);
+	navToggles();
 });
 
 
